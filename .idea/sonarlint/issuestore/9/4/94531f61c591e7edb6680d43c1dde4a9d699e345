@@ -1,0 +1,14 @@
+
+I
+java:S2755%"3Disable access to external entities in XML parsing.(ž©›ï
+`	java:S112C"FDefine and throw a dedicated exception instead of using a generic one.(Çÿâ–ÿÿÿÿÿ
+>
+java:S1148)"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+i
+java:S1104"TMake document a static final constant or non-public and provide accessors if needed.(‰»ùV
+r
+java:S3077"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(„ëõ¥ùÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(„ëõ¥ùÿÿÿÿ
+W
+java:S3457*"AFormat specifiers should be used instead of string concatenation.(Äµùü

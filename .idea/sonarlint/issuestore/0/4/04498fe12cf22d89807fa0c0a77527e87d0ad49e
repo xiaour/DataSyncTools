@@ -1,0 +1,20 @@
+
+4
+java:S55479"Use a strong cipher algorithm.(øˆþÌ
+[	java:S112H"FDefine and throw a dedicated exception instead of using a generic one.(Áî¥­
+q
+java:S1488W"[Immediately return this expression instead of assigning it to the temporary variable "key".(Ýšª¼
+9
+java:S5547<"Use a strong cipher algorithm.(¦àå½ýÿÿÿÿ
+z
+java:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(„‚÷úÿÿÿÿ
+9
+java:S55429"#Use secure mode and padding scheme.(øˆþÌ
+K
+java:S1191"5Use classes from the Java API instead of Sun classes.(óËþÓ
+`	java:S1125"FDefine and throw a dedicated exception instead of using a generic one.(Ø‡‘Ýüÿÿÿÿ
+>
+java:S1148m"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+`	java:S112@"FDefine and throw a dedicated exception instead of using a generic one.(éêÍýÿÿÿÿ
+>
+java:S5542<"#Use secure mode and padding scheme.(¦àå½ýÿÿÿÿ

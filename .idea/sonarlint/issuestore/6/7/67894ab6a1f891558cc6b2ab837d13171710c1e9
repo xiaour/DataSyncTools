@@ -1,0 +1,30 @@
+
+X	java:S125U"<This block of commented-out lines of code should be removed.(½œó¦8ÏéšË¯.
+?
+java:S1148§"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?
+java:S1148À"#Use a logger to log this exception.(Âşÿâûÿÿÿÿ
+L
+java:S2696Z"6Make the enclosing method "static" or remove this set.(è¿Ø
+o
+java:S2293R"YReplace the type specification in this constructor call with the diamond operator ("<>").(•Ÿ†Ã
+]
+java:S3457¿"AFormat specifiers should be used instead of string concatenation.(„òŠôúÿÿÿÿ
+b
+java:S1192Å"KDefine a constant instead of duplicating this literal "ds.ui.tips" 5 times.(•çŠä
+L
+java:S2696X"6Make the enclosing method "static" or remove this set.(› š¨
+Q
+java:S2696W"6Make the enclosing method "static" or remove this set.(¤€Øµúÿÿÿÿ
+L
+java:S2696Y"6Make the enclosing method "static" or remove this set.(¡¥ã‡
+]
+java:S3457Ë"AFormat specifiers should be used instead of string concatenation.(Á¨˜îûÿÿÿÿ
+X
+java:S3457¦"AFormat specifiers should be used instead of string concatenation.(Ì¯óß
+Q
+java:S1141º"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+M
+java:S2696"6Make the enclosing method "static" or remove this set.(Ë†ÒÙ
+M
+java:S2696"6Make the enclosing method "static" or remove this set.(¢‹Ş›

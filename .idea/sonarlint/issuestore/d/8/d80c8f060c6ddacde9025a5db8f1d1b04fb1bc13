@@ -1,0 +1,52 @@
+
+>
+java:S1148,"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+
+java:S1186‹"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ô—»ûÿÿÿÿ
+s
+java:S1104"XMake settingPanel a static final constant or non-public and provide accessors if needed.(Á‹ªÿÿÿÿÿ
+Q
+java:S2696P"6Make the enclosing method "static" or remove this set.(Ããº»ûÿÿÿÿ
+M
+java:S1135p"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+M
+java:S1135v"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+>
+java:S1148B"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+`
+java:S3252€"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
+P
+java:S1444!":Make this "public static dbBackUpCreateDialog" field final(ƒ“÷°
+q
+java:S1104"[Make mainPanelCenter a static final constant or non-public and provide accessors if needed.(æÔí˜
+v
+java:S1104!"`Make dbBackUpCreateDialog a static final constant or non-public and provide accessors if needed.(ƒ“÷°
+o
+java:S1104"YMake databasePanel a static final constant or non-public and provide accessors if needed.(å³Öº
+K
+java:S1444"5Make this "public static mainPanelCenter" field final(æÔí˜
+R
+java:S2696˜"6Make the enclosing method "static" or remove this set.(÷İ‰úÿÿÿÿ
+—
+java:S1186†"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Æ†êC
+M
+java:S1135d"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1444"3Make this "public static schedulePanel" field final(åº£ıüÿÿÿÿ
+L
+java:S2696U"6Make the enclosing method "static" or remove this set.(æ‡¶¶
+M
+java:S1444"2Make this "public static settingPanel" field final(Á‹ªÿÿÿÿÿ
+I
+java:S1444"3Make this "public static databasePanel" field final(å³Öº
+M
+java:S1135j"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+k
+java:S3252"OUse static access with "javax.swing.WindowConstants" for "DO_NOTHING_ON_CLOSE".(éïÍÆşÿÿÿÿ
+L
+java:S2696Q"6Make the enclosing method "static" or remove this set.(ÀÇ¥
+t
+java:S1104"YMake schedulePanel a static final constant or non-public and provide accessors if needed.(åº£ıüÿÿÿÿ
+X	java:S125\"<This block of commented-out lines of code should be removed.(––Şí8å‡úø¯.
+L
+java:S1144–".Remove this unused private "addDialog" method.(×ÿ¯8å‡úø¯.

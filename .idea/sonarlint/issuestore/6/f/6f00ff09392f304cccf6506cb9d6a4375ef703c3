@@ -1,0 +1,37 @@
+
+A
+java:S2629œ"%Invoke method(s) only conditionally. (¨Òâóúÿÿÿÿ
+A
+java:S2629©"%Invoke method(s) only conditionally. (°ëôøúÿÿÿÿ
+<
+java:S2629º"%Invoke method(s) only conditionally. (èµ«
+A
+java:S2629Ü"%Invoke method(s) only conditionally. (¹Ü†şÿÿÿÿ
+<
+java:S2629÷"%Invoke method(s) only conditionally. (©š½İ
+A
+java:S2629„"%Invoke method(s) only conditionally. (öÿ”ıÿÿÿÿ
+A
+java:S2629š"%Invoke method(s) only conditionally. (­ê…øûÿÿÿÿ
+A
+java:S2629¦"%Invoke method(s) only conditionally. (•ñ¿ ÿÿÿÿÿ
+A
+java:S2629ª"%Invoke method(s) only conditionally. („Ğÿÿÿÿÿÿ
+T
+java:S1155J">Use isEmpty() to check whether the collection is empty or not.(ÂÓ²°
+p
+java:S1104("[Make currentProgress a static final constant or non-public and provide accessors if needed.(âš«"
+v
+java:S1488´"ZImmediately return this expression instead of assigning it to the temporary variable "rs".(¶¬ØÕıÿÿÿÿ
+X
+java:S1126†"AReplace this if-then-else statement by a single return statement.(Œ‡Ü‘
+J
+java:S1172".Remove this unused method parameter "lenSize".(†Í’Ñşÿÿÿÿ
+8
+java:S1116Æ"Remove this empty statement.(ôŸìúÿÿÿÿ
+i
+java:S3776É"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(µÍœç
+8
+java:S1116"Remove this empty statement.(ôŸìúÿÿÿÿ
+K
+java:S1481Î"/Remove this unused "schemaName" local variable.(ÿ®€†ûÿÿÿÿ

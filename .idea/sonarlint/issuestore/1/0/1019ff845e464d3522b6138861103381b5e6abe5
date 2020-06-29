@@ -1,0 +1,121 @@
+
+T
+java:S1444%"9Make this "public static buttonStartSchedule" field final(ª”ôïúÿÿÿÿ
+K
+java:S1444&"0Make this "public static buttonStop" field final(¡Ì Óùÿÿÿÿ
+O
+java:S1444'"4Make this "public static buttonStartNow" field final(êê¾úÿÿÿÿ
+N
+java:S1444)"3Make this "public static progressTotal" field final(Íúıÿÿÿÿ
+P
+java:S1444*"5Make this "public static progressCurrent" field final(¶Âôşÿÿÿÿ
+G
+java:S1444,"1Make this "public static labelStatus" field final(³åñĞ
+M
+java:S1444-"7Make this "public static labelStatusDetail" field final(‰ˆœ‹
+J
+java:S1444."/Make this "public static labelFrom" field final(üêÍ›ıÿÿÿÿ
+C
+java:S1444/"-Make this "public static labelTo" field final(¶»šî
+N
+java:S14440"3Make this "public static labelLastTime" field final(ÙÕñøúÿÿÿÿ
+N
+java:S14441"3Make this "public static labelKeepTime" field final(¾»êæøÿÿÿÿ
+N
+java:S14442"3Make this "public static labelNextTime" field final(•Ï’¯ùÿÿÿÿ
+M
+java:S14443"2Make this "public static labelSuccess" field final(©ô¥éüÿÿÿÿ
+J
+java:S14444"/Make this "public static labelFail" field final(‘ ³ÿûÿÿÿÿ
+E
+java:S14449"/Make this "public static isRunning" field final(ÖÔŸî
+b
+java:S2184À"FCast one of the operands of this multiplication operation to a "long".(İïÄ‡ıÿÿÿÿ
+?
+java:S1148‚"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+z
+java:S1104%"_Make buttonStartSchedule a static final constant or non-public and provide accessors if needed.(ª”ôïúÿÿÿÿ
+q
+java:S1104&"VMake buttonStop a static final constant or non-public and provide accessors if needed.(¡Ì Óùÿÿÿÿ
+u
+java:S1104'"ZMake buttonStartNow a static final constant or non-public and provide accessors if needed.(êê¾úÿÿÿÿ
+t
+java:S1104)"YMake progressTotal a static final constant or non-public and provide accessors if needed.(Íúıÿÿÿÿ
+v
+java:S1104*"[Make progressCurrent a static final constant or non-public and provide accessors if needed.(¶Âôşÿÿÿÿ
+m
+java:S1104,"WMake labelStatus a static final constant or non-public and provide accessors if needed.(³åñĞ
+s
+java:S1104-"]Make labelStatusDetail a static final constant or non-public and provide accessors if needed.(‰ˆœ‹
+p
+java:S1104."UMake labelFrom a static final constant or non-public and provide accessors if needed.(üêÍ›ıÿÿÿÿ
+i
+java:S1104/"SMake labelTo a static final constant or non-public and provide accessors if needed.(¶»šî
+t
+java:S11040"YMake labelLastTime a static final constant or non-public and provide accessors if needed.(ÙÕñøúÿÿÿÿ
+t
+java:S11041"YMake labelKeepTime a static final constant or non-public and provide accessors if needed.(¾»êæøÿÿÿÿ
+t
+java:S11042"YMake labelNextTime a static final constant or non-public and provide accessors if needed.(•Ï’¯ùÿÿÿÿ
+s
+java:S11043"XMake labelSuccess a static final constant or non-public and provide accessors if needed.(©ô¥éüÿÿÿÿ
+p
+java:S11044"UMake labelFail a static final constant or non-public and provide accessors if needed.(‘ ³ÿûÿÿÿÿ
+k
+java:S11049"UMake isRunning a static final constant or non-public and provide accessors if needed.(ÖÔŸî
+Q
+java:S2696{"6Make the enclosing method "static" or remove this set.(“ÔŞ‰úÿÿÿÿ
+Q
+java:S2696|"6Make the enclosing method "static" or remove this set.(¶´¦úÿÿÿÿ
+R
+java:S2696‹"6Make the enclosing method "static" or remove this set.(êŠÎıÿÿÿÿ
+M
+java:S2696Œ"6Make the enclosing method "static" or remove this set.(æôßú
+R
+java:S2696š"6Make the enclosing method "static" or remove this set.(ÉÏÙ¤ùÿÿÿÿ
+R
+java:S2696›"6Make the enclosing method "static" or remove this set.(†Ÿ¹ñùÿÿÿÿ
+M
+java:S2696œ"6Make the enclosing method "static" or remove this set.(¥Ïµ¼
+R
+java:S2696"6Make the enclosing method "static" or remove this set.(­ä¬Ôüÿÿÿÿ
+R
+java:S2696Ÿ"6Make the enclosing method "static" or remove this set.(éİüÿÿÿÿ
+R
+java:S2696 "6Make the enclosing method "static" or remove this set.(óñ¼¨ùÿÿÿÿ
+R
+java:S2696Æ"6Make the enclosing method "static" or remove this set.(ğÜÓ¤øÿÿÿÿ
+R
+java:S2696Ç"6Make the enclosing method "static" or remove this set.(ÑìÇùÿÿÿÿ
+M
+java:S2696ğ"6Make the enclosing method "static" or remove this set.(ğ¥Àõ
+L
+java:S2696ò"6Make the enclosing method "static" or remove this set.(‹äó?
+M
+java:S2696õ"6Make the enclosing method "static" or remove this set.(‚ùØ
+@
+java:S1125•")Remove the literal "false" boolean value.(ÊÏë§
+M
+java:S2696ª"6Make the enclosing method "static" or remove this set.(ûõı¼
+7
+java:S2438®""syncThread" is a "Thread".(€´Ç©şÿÿÿÿ
+7
+java:S2438±""syncThread" is a "Thread".(¼šÚĞşÿÿÿÿ
+2
+java:S2438´""syncThread" is a "Thread".(‚’µ
+7
+java:S2438·""syncThread" is a "Thread".(…™¡¢üÿÿÿÿ
+7
+java:S2438º""syncThread" is a "Thread".(úïÚúÿÿÿÿ
+7
+java:S2438½""syncThread" is a "Thread".(ç–¹úÿÿÿÿ
+7
+java:S2438Ä""syncThread" is a "Thread".(Ùä˜ÿÿÿÿÿ
+N
+java:S1135Ô"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135Ú"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135à"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135î"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ

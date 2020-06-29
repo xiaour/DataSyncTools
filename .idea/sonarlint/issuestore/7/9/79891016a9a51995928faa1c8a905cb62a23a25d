@@ -1,0 +1,37 @@
+
+Q
+java:S26967"6Make the enclosing method "static" or remove this set.(¤³ª¿úÿÿÿÿ
+>
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+`
+java:S2583™"DChange this condition so that it does not always evaluate to "false"(Ûáúÿÿÿÿ
+L
+java:S26966"6Make the enclosing method "static" or remove this set.(ª¾Ì‘
+>
+java:S1148Q"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+>
+java:S1148>"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Q
+java:S26965"6Make the enclosing method "static" or remove this set.(¤òˆÑûÿÿÿÿ
+k
+java:S3008"URename this field "DBPassword" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ÏÁµ
+g
+java:S3008"QRename this field "DBUser" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›»şÊ
+\
+java:S3457P"AFormat specifiers should be used instead of string concatenation.(İ¨²Ğûÿÿÿÿ
+d
+java:S1192Z"NDefine a constant instead of duplicating this literal "jdbc:mysql://" 4 times.(—•Ã
+\
+java:S3457~"AFormat specifiers should be used instead of string concatenation.(İ¨²Ğûÿÿÿÿ
+_
+java:S2583h"DChange this condition so that it does not always evaluate to "false"(Ûáúÿÿÿÿ
+‡
+java:S1192i"lDefine a constant instead of duplicating this literal "Can not load MySQL jdbc and get connection." 3 times.(ë¦àÔûÿÿÿÿ
+k
+java:S3008"PRename this field "DBUrl" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í‚‡ûøÿÿÿÿ
+`
+java:S2583…"DChange this condition so that it does not always evaluate to "false"(Ûáúÿÿÿÿ
+l
+java:S3008"QRename this field "DBName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹•Òûÿÿÿÿ
+L
+java:S26968"6Make the enclosing method "static" or remove this set.(‡¾ËÅ

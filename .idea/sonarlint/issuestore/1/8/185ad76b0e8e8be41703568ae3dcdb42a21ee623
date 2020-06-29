@@ -1,0 +1,29 @@
+
+b
+java:S1192Æ"KDefine a constant instead of duplicating this literal "ds.ui.tips" 5 times.(•çŠä
+Q
+java:S1141»"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+?
+java:S1148¨"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?
+java:S1148Á"#Use a logger to log this exception.(Âşÿâûÿÿÿÿ
+o
+java:S2293U"YReplace the type specification in this constructor call with the diamond operator ("<>").(•Ÿ†Ã
+Q
+java:S2696X"6Make the enclosing method "static" or remove this set.(¤€Øµúÿÿÿÿ
+L
+java:S2696Y"6Make the enclosing method "static" or remove this set.(› š¨
+L
+java:S2696Z"6Make the enclosing method "static" or remove this set.(¡¥ã‡
+L
+java:S2696["6Make the enclosing method "static" or remove this set.(è¿Ø
+M
+java:S2696"6Make the enclosing method "static" or remove this set.(Ë†ÒÙ
+M
+java:S2696‘"6Make the enclosing method "static" or remove this set.(¢‹Ş›
+]
+java:S3457§"AFormat specifiers should be used instead of string concatenation.(İ¨²Ğûÿÿÿÿ
+X
+java:S3457À"AFormat specifiers should be used instead of string concatenation.(´áœ
+]
+java:S3457Ë"AFormat specifiers should be used instead of string concatenation.(Á¨˜îûÿÿÿÿ
