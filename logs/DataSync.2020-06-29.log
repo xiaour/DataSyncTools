@@ -1,7 +1,7 @@
-15:45:39.508 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-15:45:41.631 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
-15:46:09.642 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-15:46:11.811 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
+15:45:39.508 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+15:45:41.631 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
+15:46:09.642 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+15:46:11.811 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
 15:46:18.201 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.44/csx_b2b_data_center
 15:46:18.915 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.28/data_hub
 15:46:18.917 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - from 10.252.193.44 connection establied.
@@ -18,8 +18,8 @@
 15:49:23.040 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - rows insert into fixation_report_order_sku is 1000
 15:50:22.274 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - rows insert into fixation_report_order_sku is 1000
 15:51:21.629 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - rows insert into fixation_report_order_sku is 1000
-15:52:08.067 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-15:52:10.077 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
+15:52:08.067 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+15:52:10.077 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
 15:52:58.611 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.44/csx_b2b_data_center
 15:52:59.319 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.28/data_hub
 15:52:59.320 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - from 10.252.193.44 connection establied.
@@ -31,12 +31,12 @@
 15:53:00.370 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 正在读取源数据--》  csx_b2b_data_center.fixation_report_add_customer 
 15:53:00.375 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - select sdt, sales_province, sales_province_code, city_real, channel, channel_code, customer_no, customer_name, update_by, create_date, sign_date, sign_amount, contract_begin, contract_end, attribute_code, attribute, first_category, first_category_code, second_category, second_category_code, third_category, third_category_code, work_no, sales_name, sales_supervisor_name, sales_supervisor_work_no, district_manager_name, district_manager_work_no, sdt_min, sdts, sale, sale_avg, profit from csx_b2b_data_center.fixation_report_add_customer
 15:53:01.029 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 正在组装插入SQL(fixation_report_add_customer)
-16:22:41.127 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-16:22:43.193 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
-16:31:13.458 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-16:31:15.316 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
-16:34:02.522 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-16:34:04.496 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
+16:22:41.127 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+16:22:43.193 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
+16:31:13.458 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+16:31:15.316 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
+16:34:02.522 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+16:34:04.496 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
 16:34:11.814 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.44/csx_b2b_data_center
 16:34:12.530 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.28/data_hub
 16:34:12.531 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - from 10.252.193.44 connection establied.
@@ -54,8 +54,8 @@
 16:39:14.714 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - rows insert into fixation_report_add_customer is 542
 16:39:14.719 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - insert into fixation_report_add_customer 5042 rows is done. cost 300.542 seconds
 16:39:14.719 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 已经全部同步完成
-16:47:33.773 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-16:47:35.773 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
+16:47:33.773 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+16:47:35.773 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
 16:47:41.420 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.44/csx_b2b_data_center
 16:47:42.115 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.28/data_hub
 16:47:42.116 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - from 10.252.193.44 connection establied.
@@ -67,17 +67,17 @@
 16:47:43.097 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 正在读取源数据--》  csx_b2b_data_center.fixation_report_add_customer 
 16:47:43.103 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - select sdt, sales_province, sales_province_code, city_real, channel, channel_code, customer_no, customer_name, update_by, create_date, sign_date, sign_amount, contract_begin, contract_end, attribute_code, attribute, first_category, first_category_code, second_category, second_category_code, third_category, third_category_code, work_no, sales_name, sales_supervisor_name, sales_supervisor_work_no, district_manager_name, district_manager_work_no, sdt_min, sdts, sale, sale_avg, profit from csx_b2b_data_center.fixation_report_add_customer
 16:47:43.777 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 正在组装插入SQL(fixation_report_add_customer) ...
-16:48:35.979 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-16:48:37.934 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
-16:51:14.850 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-16:51:16.873 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
-16:52:01.851 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-16:52:03.798 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
-16:52:42.239 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-16:52:44.221 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
-16:53:30.421 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-17:20:23.016 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-17:20:25.058 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
+16:48:35.979 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+16:48:37.934 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
+16:51:14.850 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+16:51:16.873 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
+16:52:01.851 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+16:52:03.798 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
+16:52:42.239 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+16:52:44.221 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
+16:53:30.421 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+17:20:23.016 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+17:20:25.058 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
 17:20:30.204 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.44/csx_b2b_data_center
 17:20:30.857 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.28/data_hub
 17:20:30.858 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - from 10.252.193.44 connection establied.
@@ -95,8 +95,8 @@
 17:20:36.719 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 已经对 fixation_report_add_customer 提交
 17:20:36.727 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - insert into fixation_report_add_customer 0 rows is done. cost 4.261 seconds
 17:20:36.728 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 已经全部同步完成
-17:21:13.971 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-17:21:15.884 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
+17:21:13.971 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+17:21:15.884 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
 17:21:21.191 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.44/csx_b2b_data_center
 17:21:21.843 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.28/data_hub
 17:21:21.844 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - from 10.252.193.44 connection establied.
@@ -131,8 +131,8 @@
 17:21:53.346 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 已经对 fixation_report_add_customer 提交 -1084 行数据
 17:21:53.348 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - insert into fixation_report_add_customer -10084 rows is done. cost 5.087 seconds
 17:21:53.349 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 已经全部同步完成
-17:22:19.932 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitStart
-17:22:21.927 [AWT-EventQueue-0] INFO  com.luoboduner.wesync.App - ==================AppInitEnd
+17:22:19.932 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+17:22:21.927 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
 17:22:27.219 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.44/csx_b2b_data_center
 17:22:27.870 [AWT-EventQueue-0] INFO  c.l.wesync.tools.DbUtilMySQL - init database connection success-->10.252.193.28/data_hub
 17:22:27.872 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - from 10.252.193.44 connection establied.
@@ -148,3 +148,7 @@
 17:22:34.260 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 已经对 fixation_report_add_customer 提交 -4084 行数据
 17:22:34.262 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - insert into fixation_report_add_customer -10084 rows is done. cost 4.876 seconds
 17:22:34.262 [AWT-EventQueue-0] INFO  c.l.wesync.logic.sync.DataBaseSync - 已经全部同步完成
+19:04:48.647 [AWT-EventQueue-0] INFO  App - ==================AppInitStart
+19:04:50.617 [AWT-EventQueue-0] INFO  App - ==================AppInitEnd
+19:09:06.756 [AWT-EventQueue-0] INFO  io.github.xiaour.datasync.App - ==================AppInitStart
+19:09:08.749 [AWT-EventQueue-0] INFO  io.github.xiaour.datasync.App - ==================AppInitEnd

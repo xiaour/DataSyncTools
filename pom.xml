@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.zhoubochina.tool.wesync</groupId>
-    <artifactId>WeSync</artifactId>
+    <groupId>io.github.xiaour.datasync</groupId>
+    <artifactId>DataSyncTools</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
@@ -109,7 +109,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.luoboduner.wesync.App</mainClass>
+                            <mainClass>io.github.xiaour.datasync.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
