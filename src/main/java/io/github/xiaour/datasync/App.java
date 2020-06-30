@@ -70,6 +70,7 @@ public class App {
         frame = new JFrame();
         frame.setBounds(UiConsts.MAIN_WINDOW_X, UiConsts.MAIN_WINDOW_Y, UiConsts.MAIN_WINDOW_WIDTH,
                 UiConsts.MAIN_WINDOW_HEIGHT);
+        frame.setIconImage(UiConsts.ICON_DATA_SYNC.getImage());
         frame.setTitle(UiConsts.APP_NAME);
         frame.setBackground(UiConsts.MAIN_BACK_COLOR);
         JPanel mainPanel = new JPanel(true);

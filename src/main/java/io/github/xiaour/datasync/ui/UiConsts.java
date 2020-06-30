@@ -68,11 +68,12 @@ public class UiConsts {
      */
     public final static Font FONT_RADIO = new Font(PropertyUtil.getProperty("ds.ui.font.family"), 0, 15);
 
-    /**
-     * 主图标
 
+    /**
+     * ICON LOGO
+     */
     public final static ImageIcon ICON_DATA_SYNC = new ImageIcon(
-            App.class.getResource("/icon/WeSync.png"));*/
+            App.class.getResource("/icon/dst.png"));
     // 工具栏图标
     /**
      * 状态 默认
