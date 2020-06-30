@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Set;
 
-import io.github.xiaour.datasync.logic.sync.DataBaseInfo;
+import io.github.xiaour.datasync.logic.bean.DataBaseInfo;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.io.OutputFormat;

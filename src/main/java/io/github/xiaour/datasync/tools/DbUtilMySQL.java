@@ -1,7 +1,7 @@
 package io.github.xiaour.datasync.tools;
 
 
-import io.github.xiaour.datasync.logic.sync.DataBaseInfo;
+import io.github.xiaour.datasync.logic.bean.DataBaseInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

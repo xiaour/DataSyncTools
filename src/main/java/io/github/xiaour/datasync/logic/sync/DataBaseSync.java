@@ -2,6 +2,7 @@ package io.github.xiaour.datasync.logic.sync;
 
 import com.google.common.base.Joiner;
 import io.github.xiaour.datasync.enums.DangerOperationEnum;
+import io.github.xiaour.datasync.logic.bean.DataBaseInfo;
 import io.github.xiaour.datasync.tools.DbUtilMySQL;
 import io.github.xiaour.datasync.uitls.SqlBuilder;
 import org.slf4j.Logger;

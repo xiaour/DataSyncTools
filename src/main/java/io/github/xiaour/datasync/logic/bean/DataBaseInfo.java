@@ -1,4 +1,4 @@
-package io.github.xiaour.datasync.logic.sync;
+package io.github.xiaour.datasync.logic.bean;
 
 import java.util.Set;
 

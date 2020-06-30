@@ -18,8 +18,9 @@ public class UiConsts {
      */
     public final static String APP_NAME = "Data Sync Tools";
     public final static String APP_VERSION = "v1.2.1";
-    public final static String APP_BLOG = "https://xiaour.github.io";
-    public final static String APP_AUTHOR = "张涛";
+    public final static String APP_BLOG = "Blog: xiaour.github.io";
+    public final static String APP_AUTHOR = "Author: zhangtao";
+    public final static String APP_DESC = "简单的数据处理工具";
 
     /**
      * 主窗口大小
@@ -33,12 +34,6 @@ public class UiConsts {
      * 系统当前路径
      */
     public final static String CURRENT_DIR = System.getProperty("user.dir");
-
-    /**
-     * 主窗口图标
-
-    public final static Image IMAGE_ICON = Toolkit.getDefaultToolkit()
-            .getImage(App.class.getResource("/icon/WeSync.png"));*/
 
     /**
      * 主窗口背景色
@@ -115,6 +110,7 @@ public class UiConsts {
      */
     public final static ImageIcon ICON_SETTING_ENABLE = new ImageIcon(
             App.class.getResource("/icon/settingEnable.png"));
+
     /**
      * 备份 默认
      */
@@ -264,21 +260,6 @@ public class UiConsts {
     public final static ImageIcon ICON_CLEAR_ALL_BAKS_DISABLE = new ImageIcon(
             App.class.getResource("/icon/clearAllBaksDisable.png"));
 
-    /**
-     * 表字段对应关系 默认
-     */
-    public final static ImageIcon ICON_TABLE_FIELD = new ImageIcon(
-            App.class.getResource("/icon/tableFiled.png"));
-    /**
-     * 表字段对应关系 激活
-     */
-    public final static ImageIcon ICON_TABLE_FIELD_ENABLE = new ImageIcon(
-            App.class.getResource("/icon/tableFiledEnable.png"));
-    /**
-     * 表字段对应关系 失效
-     */
-    public final static ImageIcon ICON_TABLE_FIELD_DISABLE = new ImageIcon(
-            App.class.getResource("/icon/tableFiledDisable.png"));
     /**
      * 清空Log 默认
      */

@@ -2,7 +2,6 @@ package io.github.xiaour.datasync;
 
 import io.github.xiaour.datasync.tools.PropertyUtil;
 import io.github.xiaour.datasync.ui.UiConsts;
-import io.github.xiaour.datasync.ui.dialog.DbBackUpCreateDialog;
 import io.github.xiaour.datasync.ui.panel.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,22 +14,18 @@ import java.awt.event.WindowListener;
 /**
  * 程序入口，主窗口Frame
  *
- * @author Bob
+ * @author Bob,Zhangtao
  */
 public class App {
     private static final Logger logger = LoggerFactory.getLogger(App.class);
 
-    private JFrame frame;
+    public static JFrame frame = new JFrame();
 
     public static JPanel mainPanelCenter;
 
     public static DatabasePanel databasePanel;
     public static SchedulePanel schedulePanel;
     public static SettingPanel settingPanel;
-    /**
-     * 新建备份dialog
-     */
-    public static DbBackUpCreateDialog dbBackUpCreateDialog;
 
     /**
      * 程序入口main
@@ -38,8 +33,8 @@ public class App {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {
-                App window = new App();
-                window.frame.setVisible(true);
+                new App();
+                App.frame.setVisible(true);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -67,12 +62,13 @@ public class App {
         }
 
         // 初始化主窗口
-        frame = new JFrame();
+        frame.setResizable(false);
         frame.setBounds(UiConsts.MAIN_WINDOW_X, UiConsts.MAIN_WINDOW_Y, UiConsts.MAIN_WINDOW_WIDTH,
                 UiConsts.MAIN_WINDOW_HEIGHT);
         frame.setIconImage(UiConsts.ICON_DATA_SYNC.getImage());
         frame.setTitle(UiConsts.APP_NAME);
         frame.setBackground(UiConsts.MAIN_BACK_COLOR);
+        frame.setLocationRelativeTo(null);
         JPanel mainPanel = new JPanel(true);
         mainPanel.setBackground(Color.white);
         mainPanel.setLayout(new BorderLayout());
@@ -80,6 +76,7 @@ public class App {
         ToolBarPanel toolbar = new ToolBarPanel();
         databasePanel = new DatabasePanel();
         settingPanel = new SettingPanel();
+        schedulePanel =  new SchedulePanel();
 
         mainPanel.add(toolbar, BorderLayout.WEST);
 
@@ -88,9 +85,6 @@ public class App {
         mainPanelCenter.add(databasePanel, BorderLayout.CENTER);
 
         mainPanel.add(mainPanelCenter, BorderLayout.CENTER);
-
-        // 添加数据库备份对话框
-        //addDialog();
 
         frame.add(mainPanel);
 
@@ -145,13 +139,5 @@ public class App {
         logger.info("==================AppInitEnd");
     }
 
-    /**
-     * 数据库备份对话框
-     */
-    private void addDialog() {
-        // 数据库备份对话框
-        dbBackUpCreateDialog = new DbBackUpCreateDialog(frame, PropertyUtil.getProperty("ds.ui.mainwindow.dialog.newBackUp"), true);
-        dbBackUpCreateDialog.init();
-    }
 
 }

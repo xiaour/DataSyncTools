@@ -2,7 +2,7 @@ package io.github.xiaour.datasync.ui.panel;
 
 import io.github.xiaour.datasync.App;
 import io.github.xiaour.datasync.enums.DangerOperationEnum;
-import io.github.xiaour.datasync.logic.sync.DataBaseInfo;
+import io.github.xiaour.datasync.logic.bean.DataBaseInfo;
 import io.github.xiaour.datasync.logic.sync.DataBaseSync;
 import io.github.xiaour.datasync.tools.ConstantsTools;
 import io.github.xiaour.datasync.tools.DESPlus;
@@ -256,7 +256,6 @@ public class DatabasePanelTo extends JPanel{
 
         buttonStartSync.addActionListener(e -> {
             try {
-
 
                 ConstantsTools.CONFIGER.setHostTo(textFieldDatabaseHost.getText());
                 ConstantsTools.CONFIGER.setNameTo(textFieldDatabaseName.getText());

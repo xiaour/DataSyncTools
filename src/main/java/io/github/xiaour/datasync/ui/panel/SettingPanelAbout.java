@@ -64,11 +64,13 @@ public class SettingPanelAbout extends JPanel {
 
         JLabel labelAuthor= new JLabel(UiConsts.APP_AUTHOR);
         JLabel labelBlog = new JLabel(UiConsts.APP_BLOG);
+        JLabel labelDesc = new JLabel(UiConsts.APP_DESC);
         // 字体
         labelName.setFont(UiConsts.FONT_NORMAL);
         labelVersion.setFont(UiConsts.FONT_NORMAL);
         labelAuthor.setFont(UiConsts.FONT_NORMAL);
         labelBlog.setFont(UiConsts.FONT_NORMAL);
+        labelDesc.setFont(UiConsts.FONT_NORMAL);
 
         // 大小
         Dimension size = new Dimension(200, 30);
@@ -76,6 +78,7 @@ public class SettingPanelAbout extends JPanel {
         labelVersion.setPreferredSize(size);
         labelAuthor.setPreferredSize(size);
         labelBlog.setPreferredSize(size);
+        labelDesc.setPreferredSize(size);
 
         // 组合元素
         //panelGridIcon.add(icon);
@@ -83,6 +86,7 @@ public class SettingPanelAbout extends JPanel {
         panelGridIcon.add(labelVersion);
         panelGridIcon.add(labelAuthor);
         panelGridIcon.add(labelBlog);
+        panelGridIcon.add(labelDesc);
 
         // 建议帮助 Grid
         JPanel panelGridHelp = new JPanel();

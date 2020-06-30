@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<dataSync>
+<dataSync> 
   <status> 
     <lastSyncTime>2016-05-27 09:53:00</lastSyncTime>  
     <lastKeepTime>10.125</lastKeepTime>  
@@ -9,19 +9,19 @@
   </status>  
   <database> 
     <from> 
-      <type>MySQL</type>
-      <host>127.0.0.1</host>
-      <name>data</name>
-      <user>3c2b4baf64e3f0dca6bc6457cab9e54b</user>
-      <password>3c2b4baf64e3f0dca6bc6457cab9e54b</password>
+      <type>MySQL</type>  
+      <host>127.0.0.1</host>  
+      <name>data</name>  
+      <user>3c2b4baf64e3f0dca6bc6457cab9e54b</user>  
+      <password>3c2b4baf64e3f0dca6bc6457cab9e54b</password>  
       <tables>CONFIGS_AUD,USERS</tables> 
     </from>  
     <to> 
       <type>MySQL</type>  
-      <host>127.0.0.1</host>
-      <name>data</name>
+      <host>127.0.0.1</host>  
+      <name>data</name>  
       <user>3c2b4baf64e3f0dca6bc6457cab9e54b</user>  
-      <password>3c2b4baf64e3f0dca6bc6457cab9e54b</password>
+      <password>3c2b4baf64e3f0dca6bc6457cab9e54b</password> 
     </to> 
   </database>  
   <schedule> 
@@ -31,8 +31,8 @@
   <backup/>  
   <setting> 
     <autoBak>true</autoBak>  
-    <debugMode>false</debugMode>  
-    <strictMode>false</strictMode>  
+    <debugMode>true</debugMode>  
+    <strictMode>true</strictMode>  
     <mysqlPath>D:\MySQL</mysqlPath>  
     <productname>产品A,产品B</productname> 
   </setting>  
