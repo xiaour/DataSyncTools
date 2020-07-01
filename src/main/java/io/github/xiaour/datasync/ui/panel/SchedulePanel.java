@@ -36,8 +36,8 @@ public class SchedulePanel extends JPanel {
     public SchedulePanel() {
         initialize();
         addComponent();
-        addListener();
-        setCurrentSchedule();
+        //addListener();
+        //setCurrentSchedule();
     }
 
     /**
@@ -68,7 +68,7 @@ public class SchedulePanel extends JPanel {
         panelUp.setBackground(UiConsts.MAIN_BACK_COLOR);
         panelUp.setLayout(new FlowLayout(FlowLayout.LEFT, UiConsts.MAIN_H_GAP, 5));
 
-        JLabel labelTitle = new JLabel(PropertyUtil.getProperty("ds.ui.schedule.title"));
+        JLabel labelTitle = new JLabel(PropertyUtil.getProperty("ds.ui.check.title"));
         labelTitle.setFont(UiConsts.FONT_TITLE);
         labelTitle.setForeground(UiConsts.TOOL_BAR_BACK_COLOR);
         panelUp.add(labelTitle);
@@ -89,7 +89,7 @@ public class SchedulePanel extends JPanel {
 
         // 计划时间Grid
         JPanel panelGridSchedule = new JPanel();
-        panelGridSchedule.setBackground(UiConsts.MAIN_BACK_COLOR);
+        /*panelGridSchedule.setBackground(UiConsts.MAIN_BACK_COLOR);
         panelGridSchedule.setLayout(new FlowLayout(FlowLayout.LEFT, UiConsts.MAIN_H_GAP, 0));
 
         // 初始化组件
@@ -141,7 +141,7 @@ public class SchedulePanel extends JPanel {
         panelGridSchedule.add(radioPerDay);
         panelGridSchedule.add(radioPerWeek);
         panelGridSchedule.add(radioEveryDay);
-        panelGridSchedule.add(fixedTime);
+        panelGridSchedule.add(fixedTime);*/
 
         panelCenter.add(panelGridSchedule);
 

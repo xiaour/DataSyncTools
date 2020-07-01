@@ -1,0 +1,9 @@
+1. 使用前请先确认本机是否安装Java环境，已安装的请跳过。
+Windows Java请移步 http://10.252.192.10:8080/actionImg/Publoadfile.do?id=ff8080816f69992e0170a499743f62e4&safecode=c62cadf0f45a4c58b690ab839f0230d3
+Mac Java请移步 https://www.java.com/zh_CN/download/
+
+2.Widows 请打开本目录点击startup.bat 开始运行
+2.Mac 直接双击jar就可以运行，但可能会因为未知来源被阻止打开，在安全选项里面允许就可以了。
+
+--本工具中的密码采用密文存储，请放心使用。
+

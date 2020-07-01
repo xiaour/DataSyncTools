@@ -4,11 +4,14 @@ import com.google.common.base.Joiner;
 import io.github.xiaour.datasync.enums.DangerOperationEnum;
 import io.github.xiaour.datasync.logic.bean.DataBaseInfo;
 import io.github.xiaour.datasync.tools.DbUtilMySQL;
+import io.github.xiaour.datasync.ui.panel.DatabasePanelTo;
 import io.github.xiaour.datasync.uitls.SqlBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.swing.*;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +41,6 @@ public class DataBaseSync {
     private DataBaseInfo dbTo;
     private Integer dangerOpt;
 
-    public int currentProgress;
-
     public enum ColSizeTimes{
 
         EQUAL(1),DOUBLE(2);
@@ -54,7 +55,7 @@ public class DataBaseSync {
     }
 
 
-    public DataBaseSync(DataBaseInfo from, DataBaseInfo to, final Integer dangerOpt,Integer currentProgress, final Integer bufferRows) throws SQLException, ClassNotFoundException {
+    public DataBaseSync(DataBaseInfo from, DataBaseInfo to, final Integer dangerOpt, final Integer bufferRows) throws SQLException, ClassNotFoundException {
 
         DbUtilMySQL dbUtilMySQL = DbUtilMySQL.getInstance();
         this.dbConnFrom = dbUtilMySQL.getConnection(from);
@@ -63,7 +64,6 @@ public class DataBaseSync {
         this.dbFrom = from;
         this.dbTo = to;
         this.dangerOpt = dangerOpt;
-        this.currentProgress = currentProgress;
         logger.info( "from "+from.getHost()+ " connection establied.");
         logger.info( "to "+to.getHost()+ " connection establied.");
     }
@@ -71,7 +71,7 @@ public class DataBaseSync {
     public List<String> syncDataBase() throws SQLException, IOException {
 
         List<String> errorMsgList = this.existsTables();
-        currentProgress+=5;        // 原表必须存在
+
         if (errorMsgList.size() > 0) {
             return errorMsgList;
         }
@@ -98,7 +98,7 @@ public class DataBaseSync {
             colTypes.add(resultSet.getInt(5));
         }
 
-        currentProgress+=5;
+        DatabasePanelTo.textAreaLog.append("正在获取字段类型...\n");
 
         return colTypes;
 
@@ -116,8 +116,10 @@ public class DataBaseSync {
             ResultSet resultSet = metaData.getTables(null, dbFrom.getName(), tableName, null);
             if (resultSet.next()) {
                 logger.info("succes");
+                DatabasePanelTo.textAreaLog.append("源数据表"+tableName+"存在，继续执行。\n");
             }else {
-                msgList.add("错误:" + tableName + " 不存在!");
+                DatabasePanelTo.textAreaLog.append("错误:源数据表" + tableName + " 不存在!\n");
+                msgList.add("错误:源数据表 " + tableName + " 不存在!");
             }
         }
         return msgList;
@@ -154,7 +156,7 @@ public class DataBaseSync {
 
         logger.info(String.format("get ddl from %s ", tableName));
 
-        currentProgress+=5;
+        DatabasePanelTo.textAreaLog.append("已获取到"+tableName+"数据表DLL\n");
 
         return resultDDL;
 
@@ -205,9 +207,8 @@ public class DataBaseSync {
 
         String schemaName =  dbTo.getName();
         for(String tableName: dbFrom.getTables()){
-            String ddl = this.getDDL(tableName,ColSizeTimes.EQUAL);
 
-            this.dropAndCreateTable(tableName,ddl);
+            this.dropAndCreateTable(tableName);
 
             //数据表的列
             List<String> columnNames = getTableColumns(dbFrom.getName(),tableName);
@@ -249,20 +250,17 @@ public class DataBaseSync {
                 }
 
             }
-            currentProgress+=60;
+
             // 处理剩余的记录
             int affectRows = 0;
             for (int i : pStemt.executeBatch()) {
                 affectRows += i;
             }
             this.dbConnTo.commit();
-            logger.info(String.format("rows insert into %s is %d", tableName, affectRows));
             totalAffectRows += affectRows;
             long endtime = System.currentTimeMillis();
-            String msg = String.format("insert into %s %d rows is done. cost %.3f seconds", tableName,totalAffectRows,(endtime - starttime) * 1.0 / 1000);
-            logger.info(msg);
-            msgList.add(msg);
-            currentProgress=100;
+            DatabasePanelTo.textAreaLog.append(String.format("数据表 %s 已插入 %d 条. 耗时 %.3f 秒。", tableName,Math.abs(totalAffectRows),(endtime - starttime) * 1.0 / 1000)+"\n");
+            logger.info(String.format("insert into %s %d rows is done. cost %.3f seconds", tableName,totalAffectRows,(endtime - starttime) * 1.0 / 1000));
         }
        return msgList;
     };
@@ -270,34 +268,39 @@ public class DataBaseSync {
     /**
      * 根据条件判断是否删除或创建表
      * @param tableName
-     * @param ddl
      * @return
      * @throws SQLException
      */
-    public boolean dropAndCreateTable(String tableName, String ddl) throws SQLException {
+    public boolean dropAndCreateTable(String tableName) throws SQLException {
         if(dangerOpt.equals(DangerOperationEnum.FULL_DATA_AND_TABLE.ordinal())) {
+            //获取表结构创建语句
+            String ddl = this.getDDL(tableName,ColSizeTimes.EQUAL);
             if(this.existsTable(dbConnTo,dbTo.getName(),tableName)) {
                 String dropTableSql = "DROP TABLE " + dbTo.getName() + "." + tableName;
                 logger.info(String.format("drop table for %s is begin...", tableName));
                 PreparedStatement pStemt = this.dbConnTo.prepareStatement(dropTableSql);
                 pStemt.execute();
+                DatabasePanelTo.textAreaLog.append("已删除目标表："+tableName+"\n");
             }
             //创建表
             String[] sqls = ddl.split(";");
             for (String sql : sqls) {
                 if (!sql.isEmpty()) {
-                    PreparedStatement  createPs = this.dbConnTo.prepareStatement(sql);
-                    createPs.executeUpdate();
+                    PreparedStatement  createPs = this.dbConnTo.prepareStatement(sql+";");
+                    createPs.execute();
+                    DatabasePanelTo.textAreaLog.append("已创建目标表："+tableName+"\n");
                 }
             }
         }else{
             String clearTableSql = "truncate table " + dbTo.getName() + "." + tableName;
             logger.info(String.format("truncate table for %s is begin...", tableName));
             PreparedStatement pStemt = this.dbConnTo.prepareStatement(clearTableSql);
-            pStemt.executeUpdate();
+            pStemt.execute();
+            DatabasePanelTo.textAreaLog.append("已清空目标表："+tableName+"\n");
         }
+
         this.dbConnTo.commit();
-        currentProgress+=5;
+
         return true;
 
     }

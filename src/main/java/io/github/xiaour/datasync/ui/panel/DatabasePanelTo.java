@@ -2,14 +2,13 @@ package io.github.xiaour.datasync.ui.panel;
 
 import io.github.xiaour.datasync.App;
 import io.github.xiaour.datasync.enums.DangerOperationEnum;
+import io.github.xiaour.datasync.logic.ExecuteThread;
 import io.github.xiaour.datasync.logic.bean.DataBaseInfo;
 import io.github.xiaour.datasync.logic.sync.DataBaseSync;
-import io.github.xiaour.datasync.tools.ConstantsTools;
-import io.github.xiaour.datasync.tools.DESPlus;
-import io.github.xiaour.datasync.tools.DbUtilMySQL;
-import io.github.xiaour.datasync.tools.PropertyUtil;
+import io.github.xiaour.datasync.tools.*;
 import io.github.xiaour.datasync.ui.UiConsts;
 import io.github.xiaour.datasync.ui.component.MyIconButton;
+import io.github.xiaour.datasync.uitls.TextBorderUtlis;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,16 +35,13 @@ public class DatabasePanelTo extends JPanel{
     private static ButtonGroup buttonGroup;
     private static JRadioButton radioBtn01;
     private static JRadioButton radioBtn02;
-    private static JProgressBar progressBar;
+    public static volatile JTextArea textAreaLog;
 
-    private static final int MIN_PROGRESS = 0;
-    private static final int MAX_PROGRESS = 100;
-
-    public static int currentProgress = MIN_PROGRESS;
     //默认只同步全量数据
     private static int dangerOpt = DangerOperationEnum.FULL_DATA_ONLY.ordinal();
 
     private static final Logger logger = LoggerFactory.getLogger(DatabasePanelTo.class);
+
 
     /**
      * 构造
@@ -84,8 +80,7 @@ public class DatabasePanelTo extends JPanel{
         // 中间面板
         JPanel panelCenter = new JPanel();
         panelCenter.setBackground(UiConsts.MAIN_BACK_COLOR);
-        panelCenter.setLayout(new GridLayout(2, 1));
-
+        panelCenter.setLayout(new GridLayout(1, 2));
         // 设置Grid
         JPanel panelGridSetting = new JPanel();
         panelGridSetting.setBackground(UiConsts.MAIN_BACK_COLOR);
@@ -98,7 +93,6 @@ public class DatabasePanelTo extends JPanel{
         JLabel labelDatabaseUser = new JLabel(PropertyUtil.getProperty("ds.ui.database.user"));
         JLabel labelDatabasePassword = new JLabel(PropertyUtil.getProperty("ds.ui.database.password"));
         JLabel labelDangerOperation = new JLabel(PropertyUtil.getProperty("ds.ui.database.dangerOpt"));
-
         JComboBox<String> comboxDatabaseType = new JComboBox<>();
         comboxDatabaseType.addItem("MySQL");
         comboxDatabaseType.setEditable(false);
@@ -107,11 +101,19 @@ public class DatabasePanelTo extends JPanel{
         textFieldDatabaseName = new JTextField();
         textFieldDatabaseUser = new JTextField();
         passwordFieldDatabasePassword = new JPasswordField();
-        progressBar = new JProgressBar();
-        // 设置进度的 最小值 和 最大值
-        progressBar.setMinimum(MIN_PROGRESS);
-        progressBar.setMaximum(MAX_PROGRESS);
-        progressBar.setStringPainted(true);
+        textAreaLog =  new JTextArea(15,42);
+
+        JScrollPane js=new JScrollPane(textAreaLog);
+        js.setHorizontalScrollBarPolicy(
+                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        js.setVerticalScrollBarPolicy(
+                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+        textAreaLog.setFont(UiConsts.FONT_NORMAL);
+        textAreaLog.setLineWrap(true);
+        textAreaLog.setBorder(new TextBorderUtlis(new Color(192,192,192),1,true));
+        textAreaLog.setEditable(false);
+        textAreaLog.setBackground(new Color(232,232,232));
 
         // 创建按钮组，把两个单选按钮添加到该组
         buttonGroup= new ButtonGroup();
@@ -139,7 +141,6 @@ public class DatabasePanelTo extends JPanel{
         textFieldDatabaseName.setFont(UiConsts.FONT_NORMAL);
         textFieldDatabaseUser.setFont(UiConsts.FONT_NORMAL);
         passwordFieldDatabasePassword.setFont(UiConsts.FONT_NORMAL);
-        progressBar.setFont(UiConsts.FONT_NORMAL);
         radioBtn01.setFont(UiConsts.FONT_NORMAL);
         radioBtn02.setFont(UiConsts.FONT_NORMAL);
 
@@ -155,7 +156,6 @@ public class DatabasePanelTo extends JPanel{
         textFieldDatabaseName.setPreferredSize(UiConsts.TEXT_FIELD_SIZE_ITEM);
         textFieldDatabaseUser.setPreferredSize(UiConsts.TEXT_FIELD_SIZE_ITEM);
         passwordFieldDatabasePassword.setPreferredSize(UiConsts.TEXT_FIELD_SIZE_ITEM);
-        progressBar.setPreferredSize(UiConsts.TEXT_FIELD_SIZE_ITEM);
 
         // 组合元素
         panelGridSetting.add(labelDatabaseType);
@@ -177,19 +177,9 @@ public class DatabasePanelTo extends JPanel{
         panelGridSetting.add(radioBtn01);
         panelGridSetting.add(radioBtn02);
 
-        // 设置进度条Grid
-        JPanel panelGridProgress = new JPanel();
-        panelGridProgress.setBackground(UiConsts.MAIN_BACK_COLOR);
-        panelGridProgress.setLayout(new FlowLayout(FlowLayout.LEFT, UiConsts.MAIN_H_GAP, 5));
-        JLabel labelSyncProgress = new JLabel(PropertyUtil.getProperty("ds.ui.database.sync.progress"));
-        labelSyncProgress.setFont(UiConsts.FONT_NORMAL);
-        labelSyncProgress.setPreferredSize(UiConsts.LABLE_SIZE_ITEM);
-        panelGridProgress.add(labelSyncProgress);
-        panelGridProgress.add(progressBar);
-
+        panelGridSetting.add(js);
 
         panelCenter.add(panelGridSetting);
-        panelCenter.add(panelGridProgress);
         return panelCenter;
     }
 
@@ -250,50 +240,12 @@ public class DatabasePanelTo extends JPanel{
             dangerOpt = DangerOperationEnum.FULL_DATA_AND_TABLE.ordinal();
         });
 
-        buttonStartSync.addChangeListener(Chan -> {
+        buttonStartSync.addActionListener(event -> {
+
+            new Thread(() -> syncData()).start();
 
         });
 
-        buttonStartSync.addActionListener(e -> {
-            try {
-
-                ConstantsTools.CONFIGER.setHostTo(textFieldDatabaseHost.getText());
-                ConstantsTools.CONFIGER.setNameTo(textFieldDatabaseName.getText());
-
-                String password = "";
-                String user = "";
-                try {
-                    DESPlus des = new DESPlus();
-                    user = des.encrypt(textFieldDatabaseUser.getText());
-                    password = des.encrypt(new String(passwordFieldDatabasePassword.getPassword()));
-
-                } catch (Exception e1) {
-                    logger.error(PropertyUtil.getProperty("ds.ui.database.to.err.encode") + e1.toString());
-                    e1.printStackTrace();
-                }
-                ConstantsTools.CONFIGER.setUserTo(user);
-                ConstantsTools.CONFIGER.setPasswordTo(password);
-
-                DataBaseInfo dbFrom = ConstantsTools.CONFIGER.getDataBaseFrom();
-                DataBaseInfo dbTo = ConstantsTools.CONFIGER.getDataBaseTo();
-
-
-                DataBaseSync dataBaseSync = new DataBaseSync(dbFrom,dbTo,dangerOpt,currentProgress,10000);
-                java.util.List<String> msgList = dataBaseSync.syncDataBase();
-                currentProgress = 100;
-                progressBar.setValue(currentProgress);
-
-                JOptionPane.showMessageDialog(App.databasePanel,String.join("\n", msgList), PropertyUtil.getProperty("ds.ui.tips"), JOptionPane.PLAIN_MESSAGE);
-                buttonStartSync.setEnabled(true);
-                currentProgress = MIN_PROGRESS;
-            } catch (Exception e1) {
-                buttonStartSync.setEnabled(true);
-                JOptionPane.showMessageDialog(App.databasePanel, PropertyUtil.getProperty("ds.ui.save.fail") + e1.getMessage(), PropertyUtil.getProperty("ds.ui.tips"), JOptionPane.ERROR_MESSAGE);
-                logger.error("Write to xml file error" + e1.toString());
-                e1.printStackTrace();
-
-            }
-        });
 
         buttonTestLink.addActionListener(e -> {
 
@@ -319,5 +271,46 @@ public class DatabasePanelTo extends JPanel{
 
         });
 
+    }
+
+    public void syncData(){
+        try {
+            buttonStartSync.setEnabled(false);
+            textAreaLog.setText("-------->"+Utils.getCurrentTime()+"开始同步\n");
+            ConstantsTools.CONFIGER.setHostTo(textFieldDatabaseHost.getText());
+            ConstantsTools.CONFIGER.setNameTo(textFieldDatabaseName.getText());
+
+            String password = "";
+            String user = "";
+            try {
+                DESPlus des = new DESPlus();
+                user = des.encrypt(textFieldDatabaseUser.getText());
+                password = des.encrypt(new String(passwordFieldDatabasePassword.getPassword()));
+
+            } catch (Exception e1) {
+                logger.error(PropertyUtil.getProperty("ds.ui.database.to.err.encode") + e1.toString());
+                e1.printStackTrace();
+            }
+            ConstantsTools.CONFIGER.setUserTo(user);
+            ConstantsTools.CONFIGER.setPasswordTo(password);
+
+            DataBaseInfo dbFrom = ConstantsTools.CONFIGER.getDataBaseFrom();
+            DataBaseInfo dbTo = ConstantsTools.CONFIGER.getDataBaseTo();
+
+
+            DataBaseSync dataBaseSync = new DataBaseSync(dbFrom,dbTo,dangerOpt,10000);
+            dataBaseSync.syncDataBase();
+
+            //JOptionPane.showMessageDialog(App.databasePanel,String.join("\n", msgList), PropertyUtil.getProperty("ds.ui.tips"), JOptionPane.PLAIN_MESSAGE);
+            textAreaLog.append("-------->"+Utils.getCurrentTime()+"同步结束\n");
+            buttonStartSync.setEnabled(true);
+        } catch (Exception e1) {
+            buttonStartSync.setEnabled(true);
+            JOptionPane.showMessageDialog(App.databasePanel, PropertyUtil.getProperty("ds.ui.save.fail") + e1.getMessage(), PropertyUtil.getProperty("ds.ui.tips"), JOptionPane.ERROR_MESSAGE);
+            logger.error("Write to xml file error" + e1.toString());
+            textAreaLog.append("错误：执行同步失败!\n");
+            e1.printStackTrace();
+
+        }
     }
 }

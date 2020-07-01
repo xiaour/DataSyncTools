@@ -107,7 +107,7 @@ public class DbUtilMySQL {
 
         // 当connection失效时重新获取
         if (tempConnection == null || !tempConnection.isValid(10)) {
-            tempConnection = DriverManager.getConnection("jdbc:mysql://" + dataBase.getHost() + "/" + dataBase.getName() + "?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8&", user, password);
+            tempConnection = DriverManager.getConnection("jdbc:mysql://" + dataBase.getHost() + "/" + dataBase.getName() + "?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8", user, password);
             // 把事务提交方式改为手工提交
             tempConnection.setAutoCommit(false);
         }
