@@ -1,5 +1,6 @@
 package io.github.xiaour.datasync;
 
+import com.apple.eawt.Application;
 import io.github.xiaour.datasync.tools.PropertyUtil;
 import io.github.xiaour.datasync.ui.UiConsts;
 import io.github.xiaour.datasync.ui.panel.*;
@@ -44,14 +45,14 @@ public class App {
     /**
      * 构造，创建APP
      */
-    public App() {
+    public App() throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         initialize();
     }
 
     /**
      * 初始化frame内容
      */
-    private void initialize() {
+    private void initialize() throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         logger.info("==================AppInitStart");
         // 设置系统默认样式
         try {
@@ -61,11 +62,33 @@ public class App {
             e.printStackTrace();
         }
 
+        //获得操作系统
+        String OsName = System.getProperty("os.name");
+        //是mac 就设置dock图标
+        if (OsName.contains("Mac")) {
+            //指定mac 的dock图标
+            Application app = Application.getApplication();
+            app.setDockIconImage(UiConsts.ICON_DATA_SYNC.getImage());
+
+            System.setProperty("apple.laf.useScreenMenuBar", "true");
+
+            System.setProperty("com.apple.mrj.application.apple.menu.about.name", UiConsts.APP_NAME);
+
+            String lookAndFeel = "com.sun.java.swing.plaf.mac.MacLookAndFeel";
+            try {
+                javax.swing.UIManager.setLookAndFeel(lookAndFeel);
+            } catch (Exception ex) {
+
+            }
+        }
+
         // 初始化主窗口
         frame.setResizable(false);
         frame.setBounds(UiConsts.MAIN_WINDOW_X, UiConsts.MAIN_WINDOW_Y, UiConsts.MAIN_WINDOW_WIDTH,
                 UiConsts.MAIN_WINDOW_HEIGHT);
         frame.setIconImage(UiConsts.ICON_DATA_SYNC.getImage());
+
+
         frame.setTitle(UiConsts.APP_NAME);
         frame.setBackground(UiConsts.MAIN_BACK_COLOR);
         frame.setLocationRelativeTo(null);
