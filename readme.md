@@ -19,7 +19,8 @@ DataSyncTools
 
 目录结构描述
 -------------
->dist: 目录下有打包好的可运行jar文件
+>dist: 
+>>目录下有打包好的可运行jar文件
 >config：配置
 >>config.xml：UI设置参数的持久化  
 >>zh-cn.properties：语言，国际化
